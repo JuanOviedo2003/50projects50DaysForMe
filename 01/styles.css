@@ -1,0 +1,89 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    border: 0;
+    padding: 0;
+
+    /**Font*/
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000401;
+}
+
+.images{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+}
+
+/**Tambien se puede hacer con JavaScript*/
+
+.images > div:first-child{
+    background-image: url(./images/onepiece.webp);
+}
+.images > div:nth-child(2){
+    background-image: url(./images/bleach.webp);
+}
+.images > div:nth-child(3){
+    background-image: url(./images/Dragon-Ball-Z.webp);
+}
+.images > div:nth-child(4){
+    background-image: url(./images/ben10.webp);
+}
+.images > div:nth-child(5){
+    background-image: url(./images/Avatar.webp);
+}
+
+.panel{
+    background-size: cover;
+
+    /*! Uso imagenes con tamaños diferentes*/
+    /*? la posicion deberia ser center si es que todas tus imagenes tienen el mismo tamaño*/
+    background-position: center; 
+
+    background-repeat: no-repeat;
+    height: 80vh;
+    border-radius: 20px;
+    color: #fff;
+    cursor: pointer;
+    flex: 0.5;
+    margin: 10px;
+    position: relative;
+    transition: flex 0.7s ease-in;
+}
+
+.panel h3{
+    font-size: 24px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0;
+}
+
+.panel.active h3{
+    opacity: 1;
+}
+.active{
+    flex: 5;
+}
+
+@media ( width <= 768px ){
+    .images{
+        flex-direction: column;
+        height: 90vh;
+    }
+
+    .panel{
+        width: 90vw;
+    }
+}
